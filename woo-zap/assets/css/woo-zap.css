@@ -1,0 +1,28 @@
+/* Woo-Zap */
+
+.woocommerce table.cart td:nth-of-type(4),
+.woocommerce table.cart th:nth-of-type(5),
+table.cart tbody tr.cart_item td.product-price,
+table.cart tbody tr.cart_item td.product-quantity,
+table.shop_table.shop_table_responsive tr td.product-quantity,
+table.cart tbody tr.cart_item td.product-subtotal,
+body .cart-collaterals .cart_totals h2,
+body .cart-collaterals .cart_totals table,
+table.shop_table.shop_table_responsive tr td.actions
+{display:none !important;}
+.cart-collaterals{padding-top:0px !important}
+
+@media (max-width: 767px) 
+{
+.woocommerce table.cart td:nth-of-type(4),
+.woocommerce table.cart th:nth-of-type(5),
+table.cart tbody tr.cart_item td.product-price,
+table.cart tbody tr.cart_item td.product-quantity,
+table.shop_table.shop_table_responsive tr td.product-quantity,
+table.cart tbody tr.cart_item td.product-subtotal,
+body .cart-collaterals .cart_totals h2,
+body .cart-collaterals .cart_totals table,
+table.shop_table.shop_table_responsive tr td.actions
+{display:none !important;}
+.cart-collaterals{padding-top:0px !important}
+}
