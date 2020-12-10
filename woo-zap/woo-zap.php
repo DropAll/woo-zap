@@ -25,13 +25,13 @@ add_action( 'wp_enqueue_scripts', 'woozap_scripts' );
 // To change add to cart text on single product page
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_custom_single_add_to_cart_text' ); 
 function woocommerce_custom_single_add_to_cart_text() {
-    return __( 'Adicionar ao carrinho', 'woocommerce' ); 
+    return __( 'Adicionar', 'woocommerce' ); 
 }
 
 // To change add to cart text on product archives(Collection) page
 add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_add_to_cart_text' );  
 function woocommerce_custom_product_add_to_cart_text() {
-    return __( 'Adicionar ao carrinho', 'woocommerce' );
+    return __( 'Adicionar', 'woocommerce' );
 }
 
 add_filter( 'woocommerce_cart_item_quantity', 'wc_cart_item_quantity', 10, 3 );
@@ -46,17 +46,15 @@ function wc_cart_item_quantity( $product_quantity, $cart_item_key, $cart_item ){
 /**
 * Change Proceed To Checkout Text
 **/
-function woocommerce_button_proceed_to_checkout() { ?>
+function woocommerce_button_proceed_to_checkout_new() { ?>
 <form action="<?php echo get_home_url(); ?>/woo-zap/" method="post">
-  <input type="hidden" id="produtos" name="produtos" value="<?php
-global $woocommerce;
-$items = $woocommerce->cart->get_cart();
-foreach($items as $item => $values) {
-$_product = wc_get_product( $values['data']->get_id());
-echo "*".$_product->get_title().'* - Qdt: '.$values['quantity'].'%0A ';
-}
-?>
-">
+  <input type="hidden" id="produtos" name="produtos" value="<?php 
+                                                       global $woocommerce;
+                                                       $items = $woocommerce->cart->get_cart();
+                                                       foreach($items as $item => $values) {
+                                                           $_product = wc_get_product( $values['data']->get_id());
+                                                           echo "*".$_product->get_title().'* - Qdt: '.$values['quantity'].'%0A ';
+                                                       } ?>">
   <input type="submit" value="<?php esc_html_e( 'Finalziar Pedido', 'woocommerce' ); ?>" class="checkout-button button alt wc-forward">
 </form>
 <?php }
