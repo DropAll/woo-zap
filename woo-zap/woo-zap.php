@@ -46,7 +46,7 @@ function wc_cart_item_quantity( $product_quantity, $cart_item_key, $cart_item ){
 /**
 * Change Proceed To Checkout Text
 **/
-function woocommerce_button_proceed_to_checkout_new() { ?>
+function woocommerce_button_proceed_to_checkout() { ?>
 <form action="<?php echo get_home_url(); ?>/woo-zap/" method="post">
   <input type="hidden" id="produtos" name="produtos" value="<?php 
                                                        global $woocommerce;
